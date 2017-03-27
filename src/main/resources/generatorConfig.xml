@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+<!--mysql jar包必须路径正确能找到文件 -->
+    <classPathEntry
+        location="D:\mdp-ide\maven\repo\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
+    <context id="context1" targetRuntime="MyBatis3">
+<!--jdbc数据连接配置 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://127.0.0.1:3306/sign_record_test?useUnicode=true&amp;characterEncoding=UTF-8"
+            userId="root" password="admin" />
+<!--生成的Model -->
+        <javaModelGenerator targetPackage="com.research.security.dto"
+            targetProject="E:\git-wp\mygit-pre\research\src\main\java" />
+<!--生成的mapper .xml文件路径及目录名字 -->
+        <sqlMapGenerator targetPackage="\mapper"
+            targetProject="E:\git-wp\mygit-pre\research\src\main\rescources" />
+<!--生成的repository 服务类路径 -->
+        <javaClientGenerator targetPackage="com.research.security.repository"
+            targetProject="E:\git-wp\mygit-pre\research\src\main\java" type="XMLMAPPER" />
+            
+
+<!--数据库中的表名  -->
+<!--        <table schema="CL_DEMO" tableName="t_intellease_combo" /> -->
+       <table tableName="t_user" domainObjectName="User"
+        	delimitAllColumns="_" 
+        	enableDeleteByPrimaryKey="true"
+        	enableUpdateByPrimaryKey="true"
+        	enableInsert="true"
+			enableSelectByPrimaryKey="true" />
+        
+<!--多张表可以添加多个       <table schema="CL_DEMO" tableName="t_table_name2" /> -->
+    </context>
+</generatorConfiguration>  
